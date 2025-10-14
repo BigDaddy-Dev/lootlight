@@ -1,0 +1,67 @@
+:root {
+  color-scheme: dark;
+  font-family: "Press Start 2P", "Courier New", monospace;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top, #1a1f2b 0%, #07090f 70%);
+  color: #f7f7ff;
+}
+
+main {
+  text-align: center;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: rgba(10, 12, 20, 0.8);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+  margin-top: 0;
+  letter-spacing: 0.1em;
+  font-size: 1.2rem;
+}
+
+canvas {
+  border: 4px solid #3a3f5a;
+  background: #10131b;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  width: 640px;
+  height: 360px;
+  position: relative;
+  z-index: 1;
+}
+
+.controls {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+/* Optional CRT scanline vibe */
+main::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.05) 0px,
+    rgba(255, 255, 255, 0.05) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  mix-blend-mode: soft-light;
+  opacity: 0.25;
+}
+
+main {
+  position: relative;
+  overflow: hidden;
+}
